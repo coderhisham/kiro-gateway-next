@@ -440,6 +440,15 @@ FIRST_TOKEN_TIMEOUT: float = float(os.getenv("FIRST_TOKEN_TIMEOUT", "15"))
 # Default: 300 seconds (5 minutes) - generous timeout to avoid premature disconnects.
 STREAMING_READ_TIMEOUT: float = float(os.getenv("STREAMING_READ_TIMEOUT", "300"))
 
+# Graceful shutdown timeout (in seconds) for Ctrl+C / SIGTERM.
+# When the server is stopped, uvicorn waits for in-flight connections to drain.
+# With long-lived streaming (STREAMING_READ_TIMEOUT=300), an open SSE connection
+# would otherwise keep the process alive (and the port bound) for minutes. This
+# caps that wait so Ctrl+C frees the port promptly. A second Ctrl+C still forces
+# an immediate exit.
+# Default: 10 seconds.
+SHUTDOWN_TIMEOUT: int = int(os.getenv("SHUTDOWN_TIMEOUT", "10"))
+
 # Maximum number of attempts on first token timeout.
 # After exhausting all attempts, an error will be returned.
 # Default: 3 attempts

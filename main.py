@@ -77,6 +77,7 @@ from kiro.config import (
     DEFAULT_SERVER_HOST,
     DEFAULT_SERVER_PORT,
     STREAMING_READ_TIMEOUT,
+    SHUTDOWN_TIMEOUT,
     HIDDEN_MODELS,
     MODEL_ALIASES,
     HIDDEN_FROM_LIST,
@@ -795,6 +796,7 @@ if __name__ == "__main__":
     print_startup_banner(final_host, final_port)
     
     logger.info(f"Starting Uvicorn server on {final_host}:{final_port}...")
+    logger.debug(f"Graceful shutdown timeout: {SHUTDOWN_TIMEOUT}s (Ctrl+C; press again to force quit)")
     
     # Use string reference to avoid double module import
     uvicorn.run(
@@ -802,4 +804,7 @@ if __name__ == "__main__":
         host=final_host,
         port=final_port,
         log_config=UVICORN_LOG_CONFIG,
+        # Cap how long shutdown waits for in-flight (streaming) connections so
+        # Ctrl+C frees the port promptly instead of hanging on open SSE streams.
+        timeout_graceful_shutdown=SHUTDOWN_TIMEOUT,
     )

@@ -1116,3 +1116,37 @@ class TestFallbackModels:
         from kiro.config import FALLBACK_MODELS
 
         assert all("modelId" in m and m["modelId"] for m in FALLBACK_MODELS)
+
+
+class TestShutdownTimeoutConfig:
+    """Tests for SHUTDOWN_TIMEOUT configuration."""
+
+    def test_default_shutdown_timeout_is_10(self, monkeypatch):
+        """
+        What it does: Verifies SHUTDOWN_TIMEOUT defaults to 10 seconds.
+        Purpose: Ctrl+C should free the port within a bounded time by default.
+        """
+        print("Setup: Removing SHUTDOWN_TIMEOUT from environment...")
+        monkeypatch.delenv("SHUTDOWN_TIMEOUT", raising=False)
+
+        from importlib import reload
+        import kiro.config as config_module
+        reload(config_module)
+
+        print(f"SHUTDOWN_TIMEOUT: {config_module.SHUTDOWN_TIMEOUT}")
+        assert config_module.SHUTDOWN_TIMEOUT == 10
+
+    def test_shutdown_timeout_env_override(self, monkeypatch):
+        """
+        What it does: Verifies SHUTDOWN_TIMEOUT honors the env override.
+        Purpose: Operators can tune how long shutdown waits for streams to drain.
+        """
+        print("Setup: Setting SHUTDOWN_TIMEOUT=3...")
+        monkeypatch.setenv("SHUTDOWN_TIMEOUT", "3")
+
+        from importlib import reload
+        import kiro.config as config_module
+        reload(config_module)
+
+        print(f"SHUTDOWN_TIMEOUT: {config_module.SHUTDOWN_TIMEOUT}")
+        assert config_module.SHUTDOWN_TIMEOUT == 3
