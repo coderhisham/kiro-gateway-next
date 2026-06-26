@@ -30,7 +30,9 @@ Originally made with ❤️ by [@Jwadow](https://github.com/jwadow) • Maintain
 
 > ⚠️ **Important:** Model availability depends on your Kiro tier (free/paid). The gateway provides access to whatever models are available in your IDE or CLI based on your subscription. The list below shows models commonly available on the **free tier**.
 
-> 🔒 **Claude Opus 4.5** was removed from the free tier on January 17, 2026. It may be available on paid tiers — check your IDE/CLI model list.
+> 🔒 **Claude Opus** models (4.5–4.8) are not on the free tier. **Claude Opus 4.8** — the flagship, with a 1M-token context window — and earlier Opus versions may be available on **paid tiers**; check your IDE/CLI model list. This fork supports Opus 4.8 out of the box once your account has access.
+
+🚀 **Claude Sonnet 4.6** — Latest Sonnet. Strong all-rounder for coding, agentic workflows, and long context.
 
 🚀 **Claude Sonnet 4.5** — Balanced performance. Great for coding, writing, and general-purpose tasks.
 
