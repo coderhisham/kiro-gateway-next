@@ -26,29 +26,37 @@ Originally made with ❤️ by [@Jwadow](https://github.com/jwadow) • Maintain
 
 ---
 
-## 🤖 Available Models (Free List)
+## 🤖 Available Models
 
-> ⚠️ **Important:** Model availability depends on your Kiro tier (free/paid). The gateway provides access to whatever models are available in your IDE or CLI based on your subscription. The list below shows models commonly available on the **free tier**.
+> ⚠️ **Important:** Model availability depends on your Kiro plan. This gateway is not a gatekeeper — it exposes whatever models your IDE/CLI account can access. The breakdown below reflects [Kiro's pricing](https://kiro.dev/pricing/) and [model changelog](https://kiro.dev/changelog/models/) as of June 2026; availability changes over time, so check your own model list.
 
-> 🔒 **Claude Opus** models (4.5–4.8) are not on the free tier. **Claude Opus 4.8** — the flagship, with a 1M-token context window — and earlier Opus versions may be available on **paid tiers**; check your IDE/CLI model list. This fork supports Opus 4.8 out of the box once your account has access.
-
-🚀 **Claude Sonnet 4.6** — Latest Sonnet. Strong all-rounder for coding, agentic workflows, and long context.
+### 🆓 Free tier (social login / AWS Builder ID)
 
 🚀 **Claude Sonnet 4.5** — Balanced performance. Great for coding, writing, and general-purpose tasks.
 
-⚡ **Claude Haiku 4.5** — Lightning fast. Perfect for quick responses, simple tasks, and chat.
+🧭 **Auto** — Lets Kiro route each task to the model it judges optimal.
 
-📦 **Claude Sonnet 4** — Previous generation. Still powerful and reliable for most use cases.
-
-💤 **GLM-5** — Open MoE model (744B params, 40B active). Advanced model for complex systems engineering and long-horizon agentic tasks.
+🤖 **Qwen3-Coder-Next** — Open MoE model (80B params, 3B active). Coding-focused. Excellent for development and large projects.
 
 🐋 **DeepSeek-V3.2** — Open MoE model (685B params, 37B active). Balanced performance for coding, reasoning, and general tasks.
 
-🧩 **MiniMax M2.5** — Open MoE model (230B params, 10B active). Enhanced version with improved reasoning and task handling.
+🧩 **MiniMax 2.1** — Open MoE model (230B params, 10B active). Great for complex tasks, planning, and multi-step workflows.
 
-🧩 **MiniMax M2.1** — Open MoE model (230B params, 10B active). Great for complex tasks, planning, and multi-step workflows.
+### 💳 Paid / higher tiers (Pro, Pro+, Power)
 
-🤖 **Qwen3-Coder-Next** — Open MoE model (80B params, 3B active). Coding-focused. Excellent for development and large projects.
+👑 **Claude Opus 4.8** — Flagship with a **1M-token context window**; experimental rollout to Pro/Pro+/Power. This fork supports it out of the box once your account has access. (Earlier Opus 4.5–4.7 also paid-tier.)
+
+🚀 **Claude Sonnet 4.6** — Latest Sonnet; a full upgrade from 4.5, approaching Opus 4.6 intelligence while being more token-efficient.
+
+⚡ **Claude Haiku 4.5** — Lightning fast. Perfect for quick responses, simple tasks, and chat.
+
+📦 **Claude Sonnet 4** — Previous generation. Still reliable for most use cases.
+
+💤 **GLM-5** — Open MoE model (744B params, 40B active). For complex systems engineering and long-horizon agentic tasks.
+
+🧩 **MiniMax M2.5** — Open MoE model (230B params, 10B active). Enhanced reasoning and task handling.
+
+> ℹ️ Sources: [kiro.dev/pricing](https://kiro.dev/pricing/) and [kiro.dev/changelog/models](https://kiro.dev/changelog/models/). Content was rephrased for licensing compliance. Open-weight models (Qwen3 Coder Next, DeepSeek v3.2, MiniMax 2.1) are available across plans; free usage is bounded by credits.
 
 > 💡 **Smart Model Resolution:** Use any model name format — `claude-sonnet-4-5`, `claude-sonnet-4.5`, or even versioned names like `claude-sonnet-4-5-20250929`. The gateway normalizes them automatically.
 
