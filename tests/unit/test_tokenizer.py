@@ -313,6 +313,31 @@ class TestCountMessageTokens:
         print(f"Result: {result}")
         
         assert result > 0, "Multimodal content should have tokens"
+
+    def test_image_contributes_realistic_token_cost(self):
+        """
+        What it does: An image block adds a realistic (large) token cost, not ~100.
+        Purpose: Under-counting images made count_tokens report too low, delaying
+                 client-side compaction until the upstream context limit was hit.
+        """
+        from kiro.tokenizer import IMAGE_TOKEN_ESTIMATE
+
+        text_only = [{"role": "user", "content": [{"type": "text", "text": "hello"}]}]
+        with_image = [{
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "hello"},
+                {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": "x"}},
+            ],
+        }]
+
+        base = count_message_tokens(text_only, apply_claude_correction=False)
+        withimg = count_message_tokens(with_image, apply_claude_correction=False)
+        delta = withimg - base
+        print(f"image delta tokens: {delta}")
+        # The image should add the realistic estimate (not the old ~100 undercount)
+        assert delta == IMAGE_TOKEN_ESTIMATE
+        assert IMAGE_TOKEN_ESTIMATE >= 1000
     
     def test_without_claude_correction(self):
         """

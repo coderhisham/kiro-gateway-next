@@ -44,6 +44,14 @@ _encoding = None
 # This is an empirical value based on comparison with context_usage from API
 CLAUDE_CORRECTION_FACTOR = 1.15
 
+# Approximate token cost of a single image block.
+# Anthropic bills images at roughly (width * height) / 750 tokens, capped near
+# ~1600 for large/typical images. A flat 100 (the previous value) severely
+# under-counted image-heavy conversations, causing count_tokens to under-report
+# and clients (e.g. Claude Code) to delay compaction until the upstream context
+# limit was hit. We use a realistic, slightly conservative estimate instead.
+IMAGE_TOKEN_ESTIMATE = 1600
+
 
 def _get_encoding():
     """
@@ -149,8 +157,8 @@ def count_message_tokens(messages: List[Dict[str, Any]], apply_claude_correction
                         if item_type == "text":
                             total_tokens += count_tokens(item.get("text", ""), apply_claude_correction=False)
                         elif item_type in {"image_url", "image"}:
-                            # Estimate image as fixed cost to avoid significant undercount
-                            total_tokens += 100
+                            # Estimate image cost (see IMAGE_TOKEN_ESTIMATE)
+                            total_tokens += IMAGE_TOKEN_ESTIMATE
                         elif item_type == "tool_use":
                             total_tokens += count_tokens(item.get("id", ""), apply_claude_correction=False)
                             total_tokens += count_tokens(item.get("name", ""), apply_claude_correction=False)
@@ -174,7 +182,7 @@ def count_message_tokens(messages: List[Dict[str, Any]], apply_claude_correction
                                                 apply_claude_correction=False
                                             )
                                         elif result_type in {"image_url", "image"}:
-                                            total_tokens += 100
+                                            total_tokens += IMAGE_TOKEN_ESTIMATE
                                     else:
                                         total_tokens += count_tokens(str(result_block), apply_claude_correction=False)
                             elif tool_result_content is not None:
