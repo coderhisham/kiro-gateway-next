@@ -2,6 +2,12 @@
 
 Thank you to all the contributors who have helped improve this project!
 
+## Fork Maintainer
+
+This is a maintained community fork of [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway), preserved under AGPL-3.0.
+
+- [@coderhisham](https://github.com/coderhisham) (Muhammed Hisham) — Fork maintainer. Claude Opus 4.8 + configurable context windows (#208), web_search reliability and anti-leak hardening (#231, #173), inline `system`-role handling for Claude Code (#190, #219), clearer auth errors, and `--stop`/`--force` + bounded graceful shutdown.
+
 ## Core Contributors
 
 These contributors have made significant, sustained contributions to the project:

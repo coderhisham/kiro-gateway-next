@@ -1,0 +1,26 @@
+Kiro Gateway — maintained community fork
+=========================================
+
+This repository is a fork of "Kiro Gateway" by Jwadow:
+    https://github.com/jwadow/kiro-gateway
+
+It is distributed under the GNU Affero General Public License v3.0 (AGPL-3.0),
+the same license as the upstream project. See the LICENSE file for the full
+text. All original copyright and license notices have been preserved.
+
+Original work:
+    Copyright (C) 2025 Jwadow and contributors (see CONTRIBUTORS.md)
+
+Modifications in this fork:
+    Copyright (C) 2026 Muhammed Hisham (@coderhisham)
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. It is distributed WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Affero General Public License for more details.
+
+If you run a modified version of this software as a network service, the AGPL
+(section 13) requires you to offer its complete source code to the users
+interacting with it over the network.
