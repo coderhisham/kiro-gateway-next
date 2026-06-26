@@ -32,7 +32,7 @@ Example:
     >>> error_json = {"message": "Input is too long.", "reason": "CONTENT_LENGTH_EXCEEDS_THRESHOLD"}
     >>> error_info = enhance_kiro_error(error_json)
     >>> print(error_info.user_message)
-    "Model context limit reached. Conversation size exceeds model capacity."
+    "Model context limit reached. Conversation size exceeds model capacity. Reduce the context and retry — ..."
 """
 
 from dataclasses import dataclass
@@ -80,7 +80,7 @@ def enhance_kiro_error(error_json: Dict[str, Any]) -> KiroErrorInfo:
         >>> error_json = {"message": "Input is too long.", "reason": "CONTENT_LENGTH_EXCEEDS_THRESHOLD"}
         >>> error_info = enhance_kiro_error(error_json)
         >>> print(error_info.user_message)
-        "Model context limit reached. Conversation size exceeds model capacity."
+        "Model context limit reached. Conversation size exceeds model capacity. Reduce the context and retry — ..."
         >>> print(error_info.original_message)
         "Input is too long."
     
@@ -103,7 +103,13 @@ def enhance_kiro_error(error_json: Dict[str, Any]) -> KiroErrorInfo:
     # Map known reasons to user-friendly messages
     if reason == "CONTENT_LENGTH_EXCEEDS_THRESHOLD":
         # Context limit exceeded - conversation is too long
-        user_message = "Model context limit reached. Conversation size exceeds model capacity."
+        user_message = (
+            "Model context limit reached. Conversation size exceeds model capacity. "
+            "Reduce the context and retry — start a new conversation, run /compact "
+            "(Claude Code), or remove large files and older messages. A model with a "
+            "larger context window (e.g. Claude Opus 4.8 / Sonnet 4.6, up to 1M tokens) "
+            "may also help."
+        )
     
     elif reason == "MONTHLY_REQUEST_COUNT":
         # Monthly request limit exceeded - account quota exhausted

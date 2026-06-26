@@ -32,7 +32,7 @@ class TestEnhanceKiroErrorContentLength:
         
         print("Verification: User message is enhanced...")
         print(f"Comparing user_message: Expected 'Model context limit reached...', Got '{error_info.user_message}'")
-        assert error_info.user_message == "Model context limit reached. Conversation size exceeds model capacity."
+        assert error_info.user_message.startswith("Model context limit reached. Conversation size exceeds model capacity.")
         assert error_info.reason == "CONTENT_LENGTH_EXCEEDS_THRESHOLD"
         assert error_info.original_message == "Input is too long."
     
@@ -362,7 +362,7 @@ class TestEnhanceKiroErrorEdgeCases:
         print("Verification: Default message used, but enhancement still applied...")
         assert error_info.original_message == "Unknown error"
         # Enhancement should still work based on reason
-        assert error_info.user_message == "Model context limit reached. Conversation size exceeds model capacity."
+        assert error_info.user_message.startswith("Model context limit reached. Conversation size exceeds model capacity.")
     
     def test_empty_message_string_preserved(self):
         """
@@ -417,7 +417,7 @@ class TestEnhanceKiroErrorEdgeCases:
         error_info = enhance_kiro_error(error_json)
         
         print("Verification: Extra fields don't affect enhancement...")
-        assert error_info.user_message == "Model context limit reached. Conversation size exceeds model capacity."
+        assert error_info.user_message.startswith("Model context limit reached. Conversation size exceeds model capacity.")
         assert error_info.reason == "CONTENT_LENGTH_EXCEEDS_THRESHOLD"
     
     def test_case_sensitive_reason_matching(self):
@@ -465,6 +465,9 @@ class TestEnhanceKiroErrorMessageQuality:
         # Should NOT contain technical jargon
         assert "threshold" not in message.lower()
         assert "input" not in message.lower()
+        # Should be actionable: tell the user what to do next (issue: context overflow)
+        assert "/compact" in message or "new conversation" in message.lower()
+        assert "retry" in message.lower()
     
     def test_enhanced_message_indicates_model_limitation(self):
         """
@@ -581,7 +584,7 @@ class TestEnhanceKiroErrorIntegration:
         info3 = enhance_kiro_error(error3)
         
         print("Verification: Each error enhanced independently...")
-        assert info1.user_message == "Model context limit reached. Conversation size exceeds model capacity."
+        assert info1.user_message.startswith("Model context limit reached. Conversation size exceeds model capacity.")
         assert info2.user_message == "Error 2 (reason: UNKNOWN_ERROR)"
         assert info3.user_message == "Error 3"
         # Verify no cross-contamination
