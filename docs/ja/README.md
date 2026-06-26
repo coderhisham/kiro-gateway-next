@@ -6,7 +6,7 @@
 
 [🇬🇧 English](../../README.md) • [🇷🇺 Русский](../ru/README.md) • [🇨🇳 中文](../zh/README.md) • [🇪🇸 Español](../es/README.md) • [🇮🇩 Indonesia](../id/README.md) • [🇧🇷 Português](../pt/README.md) • 🇯🇵 日本語 • [🇰🇷 한국어](../ko/README.md)
 
-[@Jwadow](https://github.com/jwadow) が ❤️ を込めて作成
+元々 [@Jwadow](https://github.com/jwadow) が ❤️ を込めて作成 • [@coderhisham](https://github.com/coderhisham) によるメンテナンス・フォーク
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -18,6 +18,11 @@
 [モデル](#-対応モデル) • [機能](#-機能) • [クイックスタート](#-クイックスタート) • [設定](#%EF%B8%8F-設定) • [💖 サポート](#-プロジェクトを支援)
 
 </div>
+
+> 🛠️ [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway) の**コミュニティ・メンテナンス・フォーク**。[@coderhisham](https://github.com/coderhisham) がメンテナンス。
+> **AGPL-3.0** ライセンス（アップストリームと同じ）。オリジナル作品 © 2025 Jwadow および貢献者、フォークの変更 © 2026 Muhammed Hisham。[`NOTICE`](../../NOTICE) を参照。
+>
+> このフォークは Claude Opus 4.8（1M コンテキスト）対応、より信頼性の高い web_search、Claude Code 向けのインライン `system` ロール処理、分かりやすい認証エラー、簡単なサーバーの起動/停止を追加します。改善はプルリクエストとしてアップストリームにも提供されています。
 
 ---
 

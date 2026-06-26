@@ -6,7 +6,7 @@
 
 [🇬🇧 English](../../README.md) • [🇷🇺 Русский](../ru/README.md) • 🇨🇳 中文 • [🇪🇸 Español](../es/README.md) • [🇮🇩 Indonesia](../id/README.md) • [🇧🇷 Português](../pt/README.md) • [🇯🇵 日本語](../ja/README.md) • [🇰🇷 한국어](../ko/README.md)
 
-由 [@Jwadow](https://github.com/jwadow) 用 ❤️ 制作
+最初由 [@Jwadow](https://github.com/jwadow) 用 ❤️ 制作 • 由 [@coderhisham](https://github.com/coderhisham) 维护的分支
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -18,6 +18,11 @@
 [模型](#-支持的模型) • [功能](#-功能特性) • [快速开始](#-快速开始) • [配置](#%EF%B8%8F-配置) • [💖 支持](#-支持项目)
 
 </div>
+
+> 🛠️ **社区维护分支**，基于 [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway)，由 [@coderhisham](https://github.com/coderhisham) 维护。
+> 采用 **AGPL-3.0** 许可证（与上游相同）。原始作品 © 2025 Jwadow 及贡献者；分支修改 © 2026 Muhammed Hisham。详见 [`NOTICE`](../../NOTICE)。
+>
+> 此分支新增 Claude Opus 4.8（1M 上下文）支持、更可靠的 web_search、为 Claude Code 处理内联 `system` 角色、更清晰的认证错误，以及更便捷的服务器启动/停止。这些改进也已通过 pull request 提交给上游。
 
 ---
 

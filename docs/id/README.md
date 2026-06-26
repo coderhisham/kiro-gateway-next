@@ -6,7 +6,7 @@
 
 [🇬🇧 English](../../README.md) • [🇷🇺 Русский](../ru/README.md) • [🇨🇳 中文](../zh/README.md) • [🇪🇸 Español](../es/README.md) • 🇮🇩 Indonesia • [🇧🇷 Português](../pt/README.md) • [🇯🇵 日本語](../ja/README.md) • [🇰🇷 한국어](../ko/README.md)
 
-Dibuat dengan ❤️ oleh [@Jwadow](https://github.com/jwadow)
+Awalnya dibuat dengan ❤️ oleh [@Jwadow](https://github.com/jwadow) • Fork yang dikelola oleh [@coderhisham](https://github.com/coderhisham)
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -18,6 +18,11 @@ Dibuat dengan ❤️ oleh [@Jwadow](https://github.com/jwadow)
 [Model](#-model-yang-didukung) • [Fitur](#-fitur) • [Mulai Cepat](#-mulai-cepat) • [Konfigurasi](#%EF%B8%8F-konfigurasi) • [💖 Dukung](#-dukung-proyek)
 
 </div>
+
+> 🛠️ **Fork komunitas yang dikelola** dari [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway), dikelola oleh [@coderhisham](https://github.com/coderhisham).
+> Berlisensi **AGPL-3.0** (sama seperti upstream). Karya asli © 2025 Jwadow dan kontributor; modifikasi fork © 2026 Muhammed Hisham. Lihat [`NOTICE`](../../NOTICE).
+>
+> Fork ini menambahkan dukungan Claude Opus 4.8 (konteks 1M), web_search yang lebih andal, penanganan peran `system` inline untuk Claude Code, pesan error autentikasi yang lebih jelas, dan start/stop server yang lebih mudah. Peningkatan juga ditawarkan ke upstream melalui pull request.
 
 ---
 

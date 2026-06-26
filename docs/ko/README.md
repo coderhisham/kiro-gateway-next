@@ -6,7 +6,7 @@
 
 [🇬🇧 English](../../README.md) • [🇷🇺 Русский](../ru/README.md) • [🇨🇳 中文](../zh/README.md) • [🇪🇸 Español](../es/README.md) • [🇮🇩 Indonesia](../id/README.md) • [🇧🇷 Português](../pt/README.md) • [🇯🇵 日本語](../ja/README.md) • 🇰🇷 한국어
 
-[@Jwadow](https://github.com/jwadow)가 ❤️를 담아 제작
+원래 [@Jwadow](https://github.com/jwadow)가 ❤️를 담아 제작 • [@coderhisham](https://github.com/coderhisham)가 유지 관리하는 포크
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -18,6 +18,11 @@
 [모델](#-지원-모델) • [기능](#-기능) • [빠른-시작](#-빠른-시작) • [설정](#%EF%B8%8F-설정) • [💖 후원](#-프로젝트-후원)
 
 </div>
+
+> 🛠️ [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway)의 **커뮤니티 유지 관리 포크**, [@coderhisham](https://github.com/coderhisham)가 유지 관리합니다.
+> **AGPL-3.0** 라이선스(업스트림과 동일). 원본 저작물 © 2025 Jwadow 및 기여자, 포크 수정 사항 © 2026 Muhammed Hisham. [`NOTICE`](../../NOTICE) 참조.
+>
+> 이 포크는 Claude Opus 4.8(1M 컨텍스트) 지원, 더 안정적인 web_search, Claude Code를 위한 인라인 `system` 역할 처리, 명확한 인증 오류, 간편한 서버 시작/중지를 추가합니다. 개선 사항은 풀 리퀘스트로 업스트림에도 제공됩니다.
 
 ---
 

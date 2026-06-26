@@ -6,7 +6,7 @@
 
 [🇬🇧 English](../../README.md) • 🇷🇺 Русский • [🇨🇳 中文](../zh/README.md) • [🇪🇸 Español](../es/README.md) • [🇮🇩 Indonesia](../id/README.md) • [🇧🇷 Português](../pt/README.md) • [🇯🇵 日本語](../ja/README.md) • [🇰🇷 한국어](../ko/README.md)
 
-Сделано с ❤️ от [@Jwadow](https://github.com/jwadow)
+Изначально сделано с ❤️ от [@Jwadow](https://github.com/jwadow) • Поддерживаемый форк от [@coderhisham](https://github.com/coderhisham)
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -18,6 +18,11 @@
 [Модели](#-поддерживаемые-модели) • [Возможности](#-возможности) • [Быстрый старт](#-быстрый-старт) • [Конфигурация](#%EF%B8%8F-конфигурация) • [💖 Поддержать](#-поддержать-проект)
 
 </div>
+
+> 🛠️ **Поддерживаемый форк сообщества** проекта [jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway), поддерживается [@coderhisham](https://github.com/coderhisham).
+> Лицензия **AGPL-3.0** (как и у оригинала). Оригинальная работа © 2025 Jwadow и контрибьюторы; изменения форка © 2026 Muhammed Hisham. См. [`NOTICE`](../../NOTICE).
+>
+> Этот форк добавляет поддержку Claude Opus 4.8 (контекст 1M), более надёжный web_search, обработку inline-роли `system` для Claude Code, понятные ошибки авторизации и удобный запуск/остановку сервера. Улучшения также предлагаются апстриму через pull request'ы.
 
 ---
 
