@@ -652,6 +652,8 @@ print(response.content)
 
 ### Anthropic API
 
+> 🧑‍💻 **Using Claude Code?** See the dedicated [Claude Code setup guide](docs/en/CLAUDE_CODE.md) for routing Claude Code (and optional AWS Agent Plugins) through your Kiro subscription. Prefer a walkthrough with the story behind it? Read [*I Taught Claude Code to Speak Kiro*](docs/en/blog/claude-code-on-kiro.md).
+
 <details>
 <summary>🔹 Simple cURL Request</summary>
 
